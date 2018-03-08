@@ -195,7 +195,7 @@ DataAPI.talentcloudDataloaded = function(responseText,isManager){
     thisContent.announcement = content.announcement;
     thisContent.adminPortal = content.adminPortal;
     thisContent.applicantPortal = content.applicantPortal;
-  
+    thisContent.adminTagline = content.adminTagline;
     //if(siteContent){
         TalentCloudAPI.setContent(thisContent,isManager);
     //}

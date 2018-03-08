@@ -19,7 +19,8 @@ rarely, sometimes, usually, almostAlways, name, browseLink, gctc, at, howOftenDo
 readMore, canadaLink, canadaLinkHref, taglineMain, taglineSecondary, taglineTertiary, howItWorksHeading, howItWorksLead, //howItWorksMainHtml,
 logoSrc, logoAlt, ownYourStory, ownYourStoryText, getFound, getFoundText, contribute, contributeText, howItWorksLeadOut,
 howItWorksLast, contactUs, transcript, ourTeam, ourTeamText, browseTitle, createJobApplicationWindowTitle, createJobApplicationJobTitleLabel,
-createJobApplicationConfirmationPositionLabel, jobApplicationConfirmationTrackingReminder,continueToDashboard, announcement, applicantPortal, adminPortal) {
+createJobApplicationConfirmationPositionLabel, jobApplicationConfirmationTrackingReminder,continueToDashboard, announcement, applicantPortal, adminPortal, 
+adminTagline) {
     this.title = title;
     this.helpLearn = helpLearn;
     this.languageSelect = languageSelect;
@@ -117,6 +118,7 @@ createJobApplicationConfirmationPositionLabel, jobApplicationConfirmationTrackin
     this.announcement = announcement;
     this.applicantPortal = applicantPortal;
     this.adminPortal = adminPortal;
+    this.adminTagline = adminTagline;
 };
 
 /**
@@ -405,6 +407,9 @@ TalentCloudAPI.setContent = function(content, isManager){
         
         var adminPortal = document.getElementById("adminPortal");
         adminPortal.innerHTML = siteContent.adminPortal;
+
+        var adminTagline = document.getElementById("adminTagline");
+        adminTagline.innerHTML = siteContent.adminTagline;
 
         //var teamsLink = document.getElementById("teamsLink");
         //teamsLink.innerHTML = siteContent.teamsLink;
