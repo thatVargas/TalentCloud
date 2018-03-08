@@ -196,6 +196,14 @@ DataAPI.talentcloudDataloaded = function(responseText,isManager){
     thisContent.adminPortal = content.adminPortal;
     thisContent.applicantPortal = content.applicantPortal;
     thisContent.adminTagline = content.adminTagline;
+    thisContent.createJobPoster_department_labelName = content.createJobPoster_department_labelName;
+    thisContent.createJobPoster_province_labelName = content.createJobPoster_province_labelName;
+    thisContent.createJobPoster_remunerationLowRange_labelName = content.createJobPoster_remunerationLowRange_labelName;
+    thisContent.createJobPoster_remunerationHighRange_labelName = content.createJobPoster_remunerationHighRange_labelName;
+    thisContent.createJobPoster_termQuantity_labelName = content.createJobPoster_termQuantity_labelName;
+    thisContent.createJobPoster_openDate_labelName = content.createJobPoster_openDate_labelName;
+    thisContent.createJobPoster_closeDate_labelName = content.createJobPoster_closeDate_labelName;
+    thisContent.createJobPoster_startDate_labelName = content.createJobPoster_startDate_labelName;
     //if(siteContent){
         TalentCloudAPI.setContent(thisContent,isManager);
     //}

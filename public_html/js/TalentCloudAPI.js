@@ -20,7 +20,9 @@ readMore, canadaLink, canadaLinkHref, taglineMain, taglineSecondary, taglineTert
 logoSrc, logoAlt, ownYourStory, ownYourStoryText, getFound, getFoundText, contribute, contributeText, howItWorksLeadOut,
 howItWorksLast, contactUs, transcript, ourTeam, ourTeamText, browseTitle, createJobApplicationWindowTitle, createJobApplicationJobTitleLabel,
 createJobApplicationConfirmationPositionLabel, jobApplicationConfirmationTrackingReminder,continueToDashboard, announcement, applicantPortal, adminPortal, 
-adminTagline) {
+adminTagline, createJobPoster_department_labelName, createJobPoster_province_labelName, createJobPoster_remunerationLowRange_labelName, 
+createJobPoster_remunerationHighRange_labelName, createJobPoster_termQuantity_labelName, createJobPoster_openDate_labelName, createJobPoster_closeDate_labelName, 
+reateJobPoster_startDate_labelName) {
     this.title = title;
     this.helpLearn = helpLearn;
     this.languageSelect = languageSelect;
@@ -119,6 +121,14 @@ adminTagline) {
     this.applicantPortal = applicantPortal;
     this.adminPortal = adminPortal;
     this.adminTagline = adminTagline;
+    this.createJobPoster_department_labelName = createJobPoster_department_labelName;
+    this.createJobPoster_province_labelName = createJobPoster_province_labelName;
+    this.createJobPoster_remunerationLowRange_labelName = createJobPoster_remunerationLowRange_labelName;
+    this.createJobPoster_remunerationHighRange_labelName = createJobPoster_remunerationHighRange_labelName;
+    this.createJobPoster_termQuantity_labelName = createJobPoster_termQuantity_labelName;
+    this.createJobPoster_openDate_labelName = createJobPoster_openDate_labelName;
+    this.createJobPoster_closeDate_labelName = createJobPoster_closeDate_labelName;
+    this.createJobPoster_startDate_labelName = createJobPoster_startDate_labelName;
 };
 
 /**
@@ -410,6 +420,31 @@ TalentCloudAPI.setContent = function(content, isManager){
 
         var adminTagline = document.getElementById("adminTagline");
         adminTagline.innerHTML = siteContent.adminTagline;
+        
+        var createJobPoster_department_labelName = document.getElementById("createJobPoster_department_labelName");
+        createJobPoster_department_labelName.innerHTML = siteContent.createJobPoster_department_labelName;
+        
+        var createJobPoster_province_labelName = document.getElementById("createJobPoster_province_labelName");
+        createJobPoster_province_labelName.innerHTML = siteContent.createJobPoster_province_labelName;
+        
+        var createJobPoster_remunerationLowRange_labelName = document.getElementById("createJobPoster_remunerationLowRange_labelName");
+        createJobPoster_remunerationLowRange_labelName.innerHTML = siteContent.createJobPoster_remunerationLowRange_labelName;
+        
+        var createJobPoster_remunerationHighRange_labelName = document.getElementById("createJobPoster_remunerationHighRange_labelName");
+        createJobPoster_remunerationHighRange_labelName.innerHTML = siteContent.createJobPoster_remunerationHighRange_labelName;
+        
+        var createJobPoster_termQuantity_labelName = document.getElementById("createJobPoster_termQuantity_labelName");
+        createJobPoster_termQuantity_labelName.innerHTML = siteContent.createJobPoster_termQuantity_labelName;
+        
+        var createJobPoster_openDate_labelName = document.getElementById("createJobPoster_openDate_labelName");
+        createJobPoster_openDate_labelName.innerHTML = siteContent.createJobPoster_openDate_labelName;
+        
+        var createJobPoster_closeDate_labelName = document.getElementById("createJobPoster_closeDate_labelName");
+        createJobPoster_closeDate_labelName.innerHTML = siteContent.createJobPoster_closeDate_labelName;
+        
+        var createJobPoster_startDate_labelName = document.getElementById("createJobPoster_startDate_labelName");
+        createJobPoster_startDate_labelName.innerHTML = siteContent.createJobPoster_startDate_labelName;
+
 
         //var teamsLink = document.getElementById("teamsLink");
         //teamsLink.innerHTML = siteContent.teamsLink;
