@@ -780,7 +780,7 @@ and open the template in the editor .
             </section>
             <section class="pageContent hidden" id="createJobPosterSection">
                 <div class="pageBanner">
-                    <h2 class="section--title">Create a new Job Poster</h2>
+                    <h2 id="createJobPosterHeading" class="section--title">Create a new Job Poster</h2>
                 </div>
                 <div class="pageBody">
                     <div class="container">

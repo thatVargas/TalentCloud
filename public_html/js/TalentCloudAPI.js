@@ -16,13 +16,11 @@ createJobPosterSubmitInstructions, generalInformation, aboutMe, aLittleBitAboutM
 department, branch, division, leadershipStyle, myLeadershipStyle, myApproachToEmployee, myExpectationsOfEmployees,
 myApproachToDecisionMaking, workExperience, education, howOftenDoYouReview, howOftenDoYouStayLate, almostNever,
 rarely, sometimes, usually, almostAlways, name, browseLink, gctc, at, howOftenDoYouEngage, howOftenDoYouApproveDevelopment,
-readMore, canadaLink, canadaLinkHref, taglineMain, taglineSecondary, taglineTertiary, howItWorksHeading, howItWorksLead, //howItWorksMainHtml,
+readMore, canadaLink, canadaLinkHref, taglineMain, taglineSecondary, taglineTertiary, howItWorksHeading, howItWorksLead,
 logoSrc, logoAlt, ownYourStory, ownYourStoryText, getFound, getFoundText, contribute, contributeText, howItWorksLeadOut,
 howItWorksLast, contactUs, transcript, ourTeam, ourTeamText, browseTitle, createJobApplicationWindowTitle, createJobApplicationJobTitleLabel,
 createJobApplicationConfirmationPositionLabel, jobApplicationConfirmationTrackingReminder,continueToDashboard, announcement, applicantPortal, adminPortal, 
-adminTagline, createJobPoster_department_labelName, createJobPoster_province_labelName, createJobPoster_remunerationLowRange_labelName, 
-createJobPoster_remunerationHighRange_labelName, createJobPoster_termQuantity_labelName, createJobPoster_openDate_labelName, createJobPoster_closeDate_labelName, 
-reateJobPoster_startDate_labelName) {
+adminTagline, salaryMin, salaryMax, duration, openDate, closeDate, startDate, createJobPosterHeading ) {
     this.title = title;
     this.helpLearn = helpLearn;
     this.languageSelect = languageSelect;
@@ -121,14 +119,13 @@ reateJobPoster_startDate_labelName) {
     this.applicantPortal = applicantPortal;
     this.adminPortal = adminPortal;
     this.adminTagline = adminTagline;
-    this.createJobPoster_department_labelName = createJobPoster_department_labelName;
-    this.createJobPoster_province_labelName = createJobPoster_province_labelName;
-    this.createJobPoster_remunerationLowRange_labelName = createJobPoster_remunerationLowRange_labelName;
-    this.createJobPoster_remunerationHighRange_labelName = createJobPoster_remunerationHighRange_labelName;
-    this.createJobPoster_termQuantity_labelName = createJobPoster_termQuantity_labelName;
-    this.createJobPoster_openDate_labelName = createJobPoster_openDate_labelName;
-    this.createJobPoster_closeDate_labelName = createJobPoster_closeDate_labelName;
-    this.createJobPoster_startDate_labelName = createJobPoster_startDate_labelName;
+    this.salaryMin = salaryMin;
+    this.salaryMax = salaryMax;
+    this.duration = duration;
+    this.openDate = openDate;
+    this.closeDate = closeDate;
+    this.startDate = startDate;
+    this.createJobPosterHeading = createJobPosterHeading;
 };
 
 /**
@@ -411,6 +408,9 @@ TalentCloudAPI.setContent = function(content, isManager){
         //Admin side only headers
         var profileLink = document.getElementById("profileLink");
         profileLink.innerHTML = siteContent.profileLink;
+        
+        var createJobPosterHeading = document.getElementById("createJobPosterHeading");
+        createJobPosterHeading.innerHTML = siteContent.createJobPosterHeading;
 
         var jobPostersLink = document.getElementById("jobPostersLink");
         jobPostersLink.innerHTML = siteContent.jobPostersLink;
@@ -421,29 +421,29 @@ TalentCloudAPI.setContent = function(content, isManager){
         var adminTagline = document.getElementById("adminTagline");
         adminTagline.innerHTML = siteContent.adminTagline;
         
-        var createJobPoster_department_labelName = document.getElementById("createJobPoster_department_labelName");
-        createJobPoster_department_labelName.innerHTML = siteContent.createJobPoster_department_labelName;
+        var department = document.getElementById("createJobPoster_department_labelName");
+        department.innerHTML = siteContent.department;
         
-        var createJobPoster_province_labelName = document.getElementById("createJobPoster_province_labelName");
-        createJobPoster_province_labelName.innerHTML = siteContent.createJobPoster_province_labelName;
+        var jobProvince = document.getElementById("createJobPoster_province_labelName");
+        jobProvince.innerHTML = siteContent.jobProvince;
         
-        var createJobPoster_remunerationLowRange_labelName = document.getElementById("createJobPoster_remunerationLowRange_labelName");
-        createJobPoster_remunerationLowRange_labelName.innerHTML = siteContent.createJobPoster_remunerationLowRange_labelName;
+        var salaryMin = document.getElementById("createJobPoster_remunerationLowRange_labelName");
+        salaryMin.innerHTML = siteContent.salaryMin;
         
-        var createJobPoster_remunerationHighRange_labelName = document.getElementById("createJobPoster_remunerationHighRange_labelName");
-        createJobPoster_remunerationHighRange_labelName.innerHTML = siteContent.createJobPoster_remunerationHighRange_labelName;
+        var salaryMax = document.getElementById("createJobPoster_remunerationHighRange_labelName");
+        salaryMax.innerHTML = siteContent.salaryMax;
         
-        var createJobPoster_termQuantity_labelName = document.getElementById("createJobPoster_termQuantity_labelName");
-        createJobPoster_termQuantity_labelName.innerHTML = siteContent.createJobPoster_termQuantity_labelName;
+        var duration = document.getElementById("createJobPoster_termQuantity_labelName");
+        duration.innerHTML = siteContent.duration;
         
-        var createJobPoster_openDate_labelName = document.getElementById("createJobPoster_openDate_labelName");
-        createJobPoster_openDate_labelName.innerHTML = siteContent.createJobPoster_openDate_labelName;
+        var openDate = document.getElementById("createJobPoster_openDate_labelName");
+        openDate.innerHTML = siteContent.openDate;
         
-        var createJobPoster_closeDate_labelName = document.getElementById("createJobPoster_closeDate_labelName");
-        createJobPoster_closeDate_labelName.innerHTML = siteContent.createJobPoster_closeDate_labelName;
+        var closeDate = document.getElementById("createJobPoster_closeDate_labelName");
+        closeDate.innerHTML = siteContent.closeDate;
         
-        var createJobPoster_startDate_labelName = document.getElementById("createJobPoster_startDate_labelName");
-        createJobPoster_startDate_labelName.innerHTML = siteContent.createJobPoster_startDate_labelName;
+        var startDate = document.getElementById("createJobPoster_startDate_labelName");
+        startDate.innerHTML = siteContent.startDate;
 
 
         //var teamsLink = document.getElementById("teamsLink");
