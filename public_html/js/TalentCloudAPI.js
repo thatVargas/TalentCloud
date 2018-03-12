@@ -178,10 +178,10 @@ TalentCloudAPI.pages = {
                     TalentCloudAPI.setNav("profileLinkListItem");
                 }
             },
-            Dashboard:{
-                url:"#Dashboard",
+            AdminDashboard:{
+                url:"#AdminDashboard",
                 state: function(){
-                    DashboardAPI.showDashboard();
+                    AdminDashboardAPI.showDashboard();
                     TalentCloudAPI.setNav("jobPostersLinkListItem");
                 }
             },

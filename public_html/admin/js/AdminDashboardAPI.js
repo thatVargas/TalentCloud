@@ -5,12 +5,12 @@
  */
 
 
-var DashboardAPI = {};
+var AdminDashboardAPI = {};
 
-DashboardAPI.showDashboard = function(){
-    var stateInfo = {pageInfo: 'dashboard', pageTitle: 'Talent Cloud: Dashboard'};
+AdminDashboardAPI.showDashboard = function(){
+    var stateInfo = {pageInfo: 'adminDashboard', pageTitle: 'Talent Cloud: Admin Dashboard'};
     document.title = stateInfo.pageTitle;
-    history.pushState(stateInfo, stateInfo.pageInfo, '#Dashboard');
+    history.pushState(stateInfo, stateInfo.pageInfo, '#AdminDashboard');
     
     ManagerEventsAPI.hideAllLayouts();
     
@@ -18,6 +18,6 @@ DashboardAPI.showDashboard = function(){
     dashboardSection.classList.remove("hidden");
 };
 
-DashboardAPI.getJobPostersByManagerId = function(){
+AdminDashboardAPI.getJobPostersByManagerId = function(){
     
 };
