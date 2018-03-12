@@ -463,10 +463,11 @@ class JobPosterDAO extends BaseDAO {
     
     /**
      * 
-     * @param type $locale
-     * @return type
+     * @param string $locale
+     * @param int $managerUserId
+     * @return JobPoster[]
      */
-    public static function getJobPostersByManagerId($locale,$managerId) {
+    public static function getJobPostersByManagerUserId($locale,$managerUserId) {
 
         $link = BaseDAO::getConnection();
         $sqlStr = "
@@ -505,6 +506,7 @@ class JobPosterDAO extends BaseDAO {
             AND l.locale_iso = :locale_iso
             AND jpd.locale_id = l.locale_id
             AND jp_to_user.job_poster_id = jp.job_poster_id
+            AND jp_to_user.user_id = :manager_user_id
             AND jtd.job_term_id = jp.job_term_id
             AND jtd.job_term_locale_id = l.locale_id
             AND jl_1.job_level_id = jp.job_poster_job_min_level_id
@@ -523,6 +525,7 @@ class JobPosterDAO extends BaseDAO {
         
         $sql = $link->prepare($sqlStr);
         $sql->bindParam(':locale_iso', $locale, PDO::PARAM_STR);
+        $sql->bindParam(':manager_user_id', $managerUserId, PDO::PARAM_INT);
 
         try {
             $sql->execute() or die("ERROR: " . implode(":", $conn->errorInfo()));
@@ -531,7 +534,7 @@ class JobPosterDAO extends BaseDAO {
             //var_dump($rows);
         } catch (PDOException $e) {
             BaseDAO::closeConnection($link);
-            return 'getJobPostersByLocale failed: ' . $e->getMessage();
+            return 'getJobPostersByManagerUserId failed: ' . $e->getMessage();
         }
         foreach ($jobPosters as $jobPoster) {
             self::fetchArrayItemsForJobPoster($jobPoster, $locale);

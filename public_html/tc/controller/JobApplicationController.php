@@ -64,6 +64,13 @@ class JobApplicationController{
         return self::getJobApplicationsWithAnswersForJobPosterApplications($jobPosterApplications);
     }
     
+    public static function getJobApplicationsWithAnswersByApplicantUserId($applicantUserId) {
+        
+        $jobPosterApplications = JobApplicationDAO::getJobPosterApplicationsByApplicantUserId($applicantUserId);
+        
+        return self::getJobApplicationsWithAnswersForJobPosterApplications($jobPosterApplications);
+    }
+    
     /**
      * 
      * @param JobApplicationWithAnswers $jobApplicationWithAnswers

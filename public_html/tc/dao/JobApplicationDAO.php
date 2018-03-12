@@ -175,6 +175,44 @@ class JobApplicationDAO extends BaseDAO {
     }
     
     /**
+     * Returns an array of all JobPosterApplication objects associated with the
+     * specified applicant User Id.
+     * 
+     * @param int $applicantUserId
+     * @return JobPosterApplication[]
+     */
+    public static function getJobPosterApplicationsByApplicantUserId($applicantUserId) {
+        $link = BaseDAO::getConnection();
+        
+        $sqlStr = "
+        SELECT 
+            jpa.job_poster_application_id,
+            jpa.application_job_poster_id,
+            jpa.application_job_seeker_profile_id
+        FROM job_poster_application jpa, user_job_seeker_profiles user_to_profile
+        WHERE
+        jpa.application_job_seeker_profile_id = user_to_profile.job_seeker_profile_id
+        user_to_profile.user_id = :user_id
+        ;";
+        
+        $sql = $link->prepare($sqlStr);
+        $sql->bindValue(':user_id', $applicantUserId, PDO::PARAM_INT);
+       
+        try {
+            //$result = BaseDAO::executeDBTransaction($link,$sql);
+            //$link->beginTransaction();
+            $sql->execute() or die("ERROR: " . implode(":", $link->errorInfo()));
+            //$link->commit();
+            $sql->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'JobPosterApplication',array('job_poster_application_id', 'application_job_poster_id','application_job_seeker_profile_id'));
+            $jobPosterApplications = $sql->fetchAll();            
+        } catch (PDOException $e) {
+            return 'getJobPosterApplicationsByApplicantUserId failed: ' . $e->getMessage();
+        }
+        BaseDAO::closeConnection($link);
+        return $jobPosterApplications;
+    }
+    
+    /**
      * Creates a new JobPosterApplication row in database, returns the 
      * job_poster_application_id of the new row.
      * 
